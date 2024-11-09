@@ -1,14 +1,14 @@
 package routes
 
 import (
-	controller "aktai_casino/controllers"
-	"aktai_casino/middleware "
+	controller "github.com/Aktanbekov/Aktai-Casino/controllers"
+	"github.com/Aktanbekov/Aktai-Casino/middleware"
 	"github.com/gin-gonic/gin"
 )
 
 
 func UserRoutes(incomingRouter *gin.Engine) {
-	incomingRoutes.Use(middleware.Authenticate())
-	incomingRoutes.GET("/users", controller.GetUsers())
-	incomingRoutes.GET("/users/:user_id", controller.GetUser())
+	incomingRouter.Use(middleware.Authenticate())
+	incomingRouter.GET("/users", controller.GetUsers())
+	incomingRouter.GET("/users/:user_id", controller.GetUser())
 }

@@ -1,14 +1,14 @@
 package main
 
 import (
-	routes "aktai_casino/routes"
+	routes "github.com/Aktanbekov/Aktai-Casino/routes"
 	"os"
 	"github.com/gin-gonic/gin"
 )
 
 
 func main() {
-	port = os.Getenv("Port")
+	port := os.Getenv("Port")
 
 	if port == "" {
 		port="8000"

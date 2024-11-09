@@ -1,7 +1,7 @@
 package routes
 
 import (
-	controller "aktai_casino/controllers"
+	controller "github.com/Aktanbekov/Aktai-Casino/controllers"
 	"github.com/gin-gonic/gin"
 )
 

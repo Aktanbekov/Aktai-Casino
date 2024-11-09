@@ -8,8 +8,8 @@ import (
 	"os"
 	"context"
 	"github.com/joho/godotenv"
-	"go.mongodb.org/mogo-driver/mongo"
-	"go/mongo.org/mongo-driver/mongo/options"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 
@@ -19,7 +19,7 @@ func DBinstance() *mongo.Client{
 		log.Fatal("Error loading .env file")
 	}
 
-	MongoDb := os.Getenv("MONGOGB_URL")
+	MongoDb := os.Getenv("MONGODB_URL")
 
 	client, err := mongo.NewClient(options.Client().ApplyURI(MongoDb))
 	if err != nil {
@@ -35,7 +35,7 @@ func DBinstance() *mongo.Client{
 	return client
 }
 
-var Client *mongo.client = DBinstance()
+var Client *mongo.Client = DBinstance()
 
 func OpenCollection(client *mongo.Client, collectionName string) *mongo.Collection {
 	var collection *mongo.Collection = client.Database("cluster0").Collection(collectionName)
